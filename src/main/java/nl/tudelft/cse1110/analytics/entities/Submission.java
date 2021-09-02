@@ -66,10 +66,10 @@ public class Submission {
     @Column(name = "mutants_total", nullable = false)
     private int mutantsTotal;
 
-    @OneToMany(mappedBy = "submission")
+    @OneToMany(mappedBy = "submission", cascade = CascadeType.ALL)
     private Set<CodeCheckSubmission> codeCheckSubmissions;
 
-    @OneToMany(mappedBy = "submission")
+    @OneToMany(mappedBy = "submission", cascade = CascadeType.ALL)
     private Set<MetaTestSubmission> metaTestSubmissions;
 
     public Submission(UUID id, Exercise exercise, Student student, Timestamp timestamp, boolean compiled, int grade,
