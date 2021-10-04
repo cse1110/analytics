@@ -36,3 +36,4 @@ build/
 /AnalyticsApplication.mv.db
 
 env
+postgres-data
