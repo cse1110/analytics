@@ -1,5 +1,6 @@
 package nl.tudelft.cse1110.analytics.entities;
 
+import nl.tudelft.cse1110.analytics.andy.Action;
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
@@ -72,10 +73,13 @@ public class Submission {
     @OneToMany(mappedBy = "submission", cascade = CascadeType.ALL)
     private Set<MetaTestSubmission> metaTestSubmissions;
 
+    @Enumerated(EnumType.STRING)
+    private Action action;
+
     public Submission(UUID id, Exercise exercise, Student student, Timestamp timestamp, boolean compiled, int grade,
                       int jUnitPassed, int jUnitTotal, int lineCoverageCovered, int lineCoverageTotal,
                       int instructionCoverageCovered, int instructionCoverageTotal, int branchCoverageCovered,
-                      int branchCoverageTotal, int mutantsKilled, int mutantsTotal) {
+                      int branchCoverageTotal, int mutantsKilled, int mutantsTotal, Action action) {
         this.id = id;
         this.exercise = exercise;
         this.student = student;
@@ -92,6 +96,7 @@ public class Submission {
         this.branchCoverageTotal = branchCoverageTotal;
         this.mutantsKilled = mutantsKilled;
         this.mutantsTotal = mutantsTotal;
+        this.action = action;
     }
 
     public Submission() {
@@ -239,5 +244,13 @@ public class Submission {
 
     public void setMetaTestSubmissions(Set<MetaTestSubmission> metaTestSubmissions) {
         this.metaTestSubmissions = metaTestSubmissions;
+    }
+
+    public Action getAction() {
+        return action;
+    }
+
+    public void setAction(Action action) {
+        this.action = action;
     }
 }
