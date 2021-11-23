@@ -15,14 +15,13 @@ public class StudentServiceImpl implements StudentService {
     }
 
     @Override
-    public Student getOrCreate(String studentId, String name) {
+    public Student getOrCreate(String studentId) {
         Optional<Student> optional = studentRepository.findByStudentId(studentId);
         if (optional.isPresent()) {
             return optional.get();
         } else {
             Student student = new Student();
             student.setStudentId(studentId);
-            student.setName(name);
             return studentRepository.save(student);
         }
     }

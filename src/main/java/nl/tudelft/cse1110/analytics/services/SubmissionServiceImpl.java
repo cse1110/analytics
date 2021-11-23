@@ -28,7 +28,7 @@ public class SubmissionServiceImpl implements SubmissionService {
     @Override
     public void save(SubmissionDTO submissionDTO) {
         Exercise exercise = exerciseService.getOrCreate(submissionDTO.metaData().exercise(), submissionDTO.metaData().course());
-        Student student = studentService.getOrCreate(submissionDTO.metaData().studentId(), submissionDTO.metaData().studentName());
+        Student student = studentService.getOrCreate(submissionDTO.metaData().studentId());
         Submission submission = new Submission();
         submission.setExercise(exercise);
         submission.setStudent(student);
