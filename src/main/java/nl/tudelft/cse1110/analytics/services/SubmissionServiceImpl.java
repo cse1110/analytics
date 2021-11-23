@@ -59,7 +59,7 @@ public class SubmissionServiceImpl implements SubmissionService {
                 submission.setMetaTestSubmissions(submissionDTO.result().metaTests().metaTestResults().stream().map(metaTestResult -> new MetaTestSubmission(null, metaTestService.getOrCreate(exercise, metaTestResult.name()), submission, metaTestResult.succeeded())).collect(Collectors.toSet()));
             }
         }
-        submission.setAction(submissionDTO.metaData().action());
+        submission.setAction(submissionDTO.action());
         submissionRepository.save(submission);
     }
 }
