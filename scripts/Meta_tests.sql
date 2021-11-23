@@ -1,7 +1,7 @@
 /*
 Name: Meta tests
 Data source: 1
-Created By: Maurício Aniche
+Created By: Yoon Hwan Jeong
 Last Updated At: 2021-11-22T23:47:58.230Z
 */
 SELECT meta_tests.name, COUNT(*) FILTER (WHERE meta_test_submissions.passed) / COUNT(*)::decimal * 100 as ratio

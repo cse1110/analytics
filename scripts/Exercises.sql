@@ -1,7 +1,7 @@
 /*
 Name: Exercises
 Data source: 1
-Created By: Maurício Aniche
+Created By: Yoon Hwan Jeong
 Last Updated At: 2021-10-04T16:37:51.558Z
 */
 SELECT exercises.id as value, courses.name || '/' || exercises.name as name

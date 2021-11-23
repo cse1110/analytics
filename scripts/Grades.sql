@@ -1,7 +1,7 @@
 /*
 Name: Grades
 Data source: 1
-Created By: Maurício Aniche
+Created By: Yoon Hwan Jeong
 Last Updated At: 2021-11-22T23:45:12.652Z
 */
 SELECT grade, COUNT(*)

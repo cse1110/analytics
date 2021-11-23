@@ -1,7 +1,7 @@
 /*
 Name: Attempts
 Data source: 1
-Created By: Maurício Aniche
+Created By: Yoon Hwan Jeong
 Last Updated At: 2021-11-22T23:44:25.142Z
 */
 SELECT attempts, COUNT(*)
