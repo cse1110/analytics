@@ -34,3 +34,6 @@ build/
 
 # H2 database file
 /AnalyticsApplication.mv.db
+
+env
+postgres-data
