@@ -23,16 +23,12 @@ public class Student {
     @Column(name = "student_id", nullable = false)
     private String studentId;
 
-    @Column(name = "name", nullable = false)
-    private String name;
-
     @OneToMany(mappedBy = "student")
     private Set<Submission> submissions;
 
-    public Student(UUID id, String studentId, String name) {
+    public Student(UUID id, String studentId) {
         this.id = id;
         this.studentId = studentId;
-        this.name = name;
     }
 
     public Student() {
@@ -52,14 +48,6 @@ public class Student {
 
     public void setStudentId(String studentId) {
         this.studentId = studentId;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
     }
 
     public Set<Submission> getSubmissions() {
